@@ -43,7 +43,7 @@ export default function PricingSection({ onSelectPlan }) {
           border: '1px solid rgba(255,255,255,0.15)',
           marginBottom: '40px',
           overflow: 'hidden',
-        }}>\n          {BILLING_PERIODS.map((bp) => {
+        }}>          {BILLING_PERIODS.map((bp) => {
             const active = bp.id === period;
             return (
               <button
