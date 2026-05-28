@@ -76,19 +76,46 @@ export default function Navbar() {
         <button onClick={() => setMenuOpen((v) => !v)} className="os-mobile-btn"
           aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={menuOpen}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '8px', lineHeight: 1 }}>
-          <span className="material-symbols-outlined" style={{ fontSize: '28px', display: 'block' }}>
-            {menuOpen ? 'close' : 'menu'}
-          </span>
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '8px', lineHeight: 1, position: 'relative', width: '44px', height: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* Menu icon — fades out and rotates away when open */}
+          <span className="material-symbols-outlined" style={{
+            fontSize: '28px',
+            display: 'block',
+            color: '#000',
+            position: 'absolute',
+            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease',
+            transform: menuOpen ? 'rotate(90deg) scale(0.5)' : 'rotate(0deg) scale(1)',
+            opacity: menuOpen ? 0 : 1,
+            pointerEvents: 'none',
+          }}>menu</span>
+          {/* Close icon — fades in and rotates into place when open */}
+          <span className="material-symbols-outlined" style={{
+            fontSize: '28px',
+            display: 'block',
+            color: '#000',
+            position: 'absolute',
+            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease',
+            transform: menuOpen ? 'rotate(0deg) scale(1)' : 'rotate(-90deg) scale(0.5)',
+            opacity: menuOpen ? 1 : 0,
+            pointerEvents: 'none',
+          }}>close</span>
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
+      {/* Mobile menu — always rendered, animated with max-height + opacity */}
+      <div style={{
+        backgroundColor: '#f9f9f9',
+        borderTop: menuOpen ? '1px solid #000' : '1px solid transparent',
+        maxHeight: menuOpen ? '500px' : '0px',
+        overflow: 'hidden',
+        opacity: menuOpen ? 1 : 0,
+        transition: 'max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, border-color 0.3s ease',
+      }}>
         <div style={{
-          backgroundColor: '#f9f9f9', borderTop: '1px solid #000',
           padding: '20px 20px 28px',
           display: 'flex', flexDirection: 'column', gap: '20px',
+          transform: menuOpen ? 'translateY(0)' : 'translateY(-8px)',
+          transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
         }}>
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className="label-sm"
@@ -100,7 +127,7 @@ export default function Navbar() {
             Empezá tu proyecto
           </Button>
         </div>
-      )}
+      </div>
 
       <style>{`
         @media (min-width: 768px) {

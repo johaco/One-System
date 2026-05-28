@@ -25,6 +25,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Prevent layout shift from scrollbar */
   overflow-x: hidden;
+  /* Prevent pinch-to-zoom while allowing normal scroll */
+  touch-action: pan-y;
 }
 
 /* Prevent iOS tap highlight */
