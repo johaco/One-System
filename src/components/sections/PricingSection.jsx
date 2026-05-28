@@ -38,40 +38,43 @@ export default function PricingSection({ onSelectPlan }) {
 
         {/* ── Billing toggle ── */}
         <div style={{
-          display: 'inline-flex',
+          display: 'flex',
+          width: '100%',
           border: '1px solid rgba(255,255,255,0.15)',
           marginBottom: '40px',
           overflow: 'hidden',
-        }}>
-          {BILLING_PERIODS.map((bp) => {
+        }}>\n          {BILLING_PERIODS.map((bp) => {
             const active = bp.id === period;
             return (
               <button
                 key={bp.id}
                 onClick={() => setPeriod(bp.id)}
                 style={{
-                  padding: '10px 22px',
-                  fontSize: '12px', fontWeight: 700,
-                  letterSpacing: '0.08em', textTransform: 'uppercase',
+                  flex: 1,
+                  padding: '10px 8px',
+                  fontSize: '11px', fontWeight: 700,
+                  letterSpacing: '0.06em', textTransform: 'uppercase',
                   fontFamily: 'inherit', cursor: 'pointer',
                   border: 'none',
                   borderRight: '1px solid rgba(255,255,255,0.15)',
                   backgroundColor: active ? '#fff' : 'transparent',
                   color: active ? '#000' : '#666',
                   transition: 'background-color 150ms ease, color 150ms ease',
-                  display: 'flex', alignItems: 'center', gap: '8px',
-                  minHeight: '44px', touchAction: 'manipulation',
-                  whiteSpace: 'nowrap',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  flexWrap: 'wrap', gap: '4px',
+                  minHeight: '52px', touchAction: 'manipulation',
+                  textAlign: 'center',
                 }}
               >
                 {bp.label}
                 {bp.badge && (
                   <span style={{
-                    fontSize: '10px', fontWeight: 700,
+                    fontSize: '9px', fontWeight: 700,
                     backgroundColor: active ? '#000' : 'rgba(255,255,255,0.12)',
                     color: active ? '#fff' : '#aaa',
-                    padding: '2px 7px',
+                    padding: '2px 5px',
                     letterSpacing: '0.05em',
+                    whiteSpace: 'nowrap',
                   }}>{bp.badge}</span>
                 )}
               </button>
