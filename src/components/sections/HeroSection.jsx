@@ -39,12 +39,12 @@ export default function HeroSection() {
           lineHeight: 1.65, color: 'rgba(255,255,255,.62)',
           marginBottom: '40px', maxWidth: '52ch',
         }}>
-          Soluciones web para emprendedores.
+          Soluciones web de alto rendimiento para emprendedores argentinos.
           Diseño brutalista, eficiencia técnica y claridad absoluta en cada línea de código.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
           <Button href="#contacto" variant="primaryOnDark">Empezá tu proyecto</Button>
-          <Button href="https://wa.me/+542634618976" target="_blank" rel="noopener noreferrer" variant="outlineOnDark">
+          <Button href="https://wa.me/" target="_blank" rel="noopener noreferrer" variant="outlineOnDark">
             <span className="material-symbols-outlined" style={{
               fontFamily: 'Material Symbols Outlined', fontSize: '18px',
               fontWeight: 100, fontStyle: 'normal', lineHeight: 1,
