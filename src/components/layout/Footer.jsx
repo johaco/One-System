@@ -22,7 +22,7 @@ export default function Footer() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <AnimatedLogo inverted />
             <p style={{ fontSize: '14px', color: '#6b6b6b', lineHeight: 1.6 }}>
-              Soluciones web para emprendedores argentinos.<br />
+              Soluciones web para emprendedores.<br />
               Claridad absoluta en cada línea de código.
             </p>
             {/* Social */}
