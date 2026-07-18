@@ -28,7 +28,7 @@ export default function ContactSection() {
               Contanos qué necesita tu negocio y nosotros nos encargamos del resto.
               Sin tecnicismos, sin vueltas.
             </p>
-            <Button href="https://wa.me/" target="_blank" rel="noopener noreferrer" variant="primary" style={{ gap: '10px' }}>
+            <Button href="https://wa.me/542634618976?text=Hola%20Joaquin,%20quiero%20consultar%20por%20un%20proyecto." target="_blank" rel="noopener noreferrer" variant="primary" style={{ gap: '10px' }}>
               <span className="material-symbols-outlined" style={{
                 fontFamily: 'Material Symbols Outlined', fontSize: '20px',
                 fontWeight: 100, fontStyle: 'normal', lineHeight: 1,

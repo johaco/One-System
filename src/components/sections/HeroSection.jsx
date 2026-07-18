@@ -44,7 +44,7 @@ export default function HeroSection() {
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
           <Button href="#contacto" variant="primaryOnDark">Empezá tu proyecto</Button>
-          <Button href="https://wa.me/" target="_blank" rel="noopener noreferrer" variant="outlineOnDark">
+          <Button href="https://wa.me/549XXXXXXXXXX?text=Hola%20Joaquin,%20quiero%20consultar%20por%20un%20proyecto." target="_blank" rel="noopener noreferrer" variant="outlineOnDark">
             <span className="material-symbols-outlined" style={{
               fontFamily: 'Material Symbols Outlined', fontSize: '18px',
               fontWeight: 100, fontStyle: 'normal', lineHeight: 1,
