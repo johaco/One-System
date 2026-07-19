@@ -136,7 +136,7 @@ export default function Navbar() {
           justifyContent: 'space-between',
           height: '72px',
         }}
-      >
+      />
         <a
           href="#"
           aria-label="One System inicio"
@@ -199,37 +199,39 @@ export default function Navbar() {
         </div>
 
         {/* Botón del menú móvil */}
-        <button
-          type="button"
-          className="os-mobile-btn"
-          aria-label={
-            menuOpen
-              ? 'Cerrar menú'
-              : 'Abrir menú'
-          }
-          aria-expanded={menuOpen}
-          onClick={() =>
-            setMenuOpen((currentValue) => !currentValue)
-          }
-          style={{
-            padding: '8px',
-            border: 'none',
-            background: 'none',
-            cursor: 'pointer',
-            lineHeight: 1,
-          }}
-        >
-          <span
-            className="material-symbols-outlined"
-            style={{
-              display: 'block',
-              fontSize: '28px',
-            }}
-          >
-            {menuOpen ? 'close' : 'menu'}
-          </span>
-        </button>
-      </div>
+<button
+  type="button"
+  className="os-mobile-btn"
+  aria-label={
+    menuOpen
+      ? 'Cerrar menú'
+      : 'Abrir menú'
+  }
+  aria-expanded={menuOpen}
+  onClick={() =>
+    setMenuOpen((currentValue) => !currentValue)
+  }
+  style={{
+    padding: '8px',
+    border: 'none',
+    background: 'none',
+    cursor: 'pointer',
+    lineHeight: 1,
+    color: '#000',
+    WebkitTapHighlightColor: 'transparent',
+  }}
+>
+  <span
+    className="material-symbols-outlined"
+    style={{
+      display: 'block',
+      fontSize: '28px',
+      color: '#000',
+    }}
+  >
+    {menuOpen ? 'close' : 'menu'}
+  </span>
+</button>
 
       {/* Navegación móvil */}
       {menuOpen && (
