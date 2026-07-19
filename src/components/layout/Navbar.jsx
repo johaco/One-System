@@ -129,18 +129,20 @@ export default function Navbar() {
           height: '72px',
         }}
       >
-        <a
-          href="#"
-          aria-label="One System inicio"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            flexShrink: 0,
-          }}
-          onClick={() => setActiveSection('')}
-        >
-          <AnimatedLogo inverted={false} />
-        </a>
+      <a
+        href="#"
+        aria-label="One System inicio"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          flexShrink: 0,
+          overflow: 'visible',
+          minHeight: '48px',
+        }}
+        onClick={() => setActiveSection('')}
+      >
+        <AnimatedLogo inverted={false} />
+      </a>
 
         {/* Navegación de escritorio */}
         <div
