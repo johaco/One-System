@@ -27,11 +27,6 @@ export default function Navbar() {
       cancelAnimationFrame(animationFrameId);
 
       animationFrameId = requestAnimationFrame(() => {
-        /*
-         * La barra mide 72 px.
-         * Este valor permite cambiar la opción activa un poco
-         * después de que la sección entra en pantalla.
-         */
         const activationPoint = 150;
 
         let currentSection = '';
@@ -51,9 +46,6 @@ export default function Navbar() {
           }
         });
 
-        /*
-         * Al llegar al final de la página, se marca Contacto.
-         */
         const reachedPageBottom =
           window.innerHeight + window.scrollY >=
           document.documentElement.scrollHeight - 5;
@@ -136,7 +128,7 @@ export default function Navbar() {
           justifyContent: 'space-between',
           height: '72px',
         }}
-      />
+      >
         <a
           href="#"
           aria-label="One System inicio"
@@ -199,39 +191,42 @@ export default function Navbar() {
         </div>
 
         {/* Botón del menú móvil */}
-<button
-  type="button"
-  className="os-mobile-btn"
-  aria-label={
-    menuOpen
-      ? 'Cerrar menú'
-      : 'Abrir menú'
-  }
-  aria-expanded={menuOpen}
-  onClick={() =>
-    setMenuOpen((currentValue) => !currentValue)
-  }
-  style={{
-    padding: '8px',
-    border: 'none',
-    background: 'none',
-    cursor: 'pointer',
-    lineHeight: 1,
-    color: '#000',
-    WebkitTapHighlightColor: 'transparent',
-  }}
->
-  <span
-    className="material-symbols-outlined"
-    style={{
-      display: 'block',
-      fontSize: '28px',
-      color: '#000',
-    }}
-  >
-    {menuOpen ? 'close' : 'menu'}
-  </span>
-</button>
+        <button
+          type="button"
+          className="os-mobile-btn"
+          aria-label={
+            menuOpen
+              ? 'Cerrar menú'
+              : 'Abrir menú'
+          }
+          aria-expanded={menuOpen}
+          onClick={() =>
+            setMenuOpen(
+              (currentValue) => !currentValue,
+            )
+          }
+          style={{
+            padding: '8px',
+            border: 'none',
+            background: 'none',
+            cursor: 'pointer',
+            lineHeight: 1,
+            color: '#000',
+            WebkitTapHighlightColor: 'transparent',
+          }}
+        >
+          <span
+            className="material-symbols-outlined"
+            style={{
+              display: 'block',
+              fontSize: '28px',
+              color: '#000',
+            }}
+          >
+            {menuOpen ? 'close' : 'menu'}
+          </span>
+        </button>
+      </div>
 
       {/* Navegación móvil */}
       {menuOpen && (
@@ -287,6 +282,18 @@ export default function Navbar() {
 
       <style>{`
         .os-nav-link:hover {
+          color: #000 !important;
+        }
+
+        .os-mobile-btn,
+        .os-mobile-btn:hover,
+        .os-mobile-btn:focus,
+        .os-mobile-btn:active {
+          color: #000 !important;
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        .os-mobile-btn .material-symbols-outlined {
           color: #000 !important;
         }
 
